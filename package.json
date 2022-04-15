@@ -1,0 +1,32 @@
+{
+  "name": "todo-api",
+  "version": "1.0.0",
+  "description": "CRUD API for a mongo DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon ./app/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaniloEspinoza96/todo-api.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "express"
+  ],
+  "author": "DaniloEspinoza96",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DaniloEspinoza96/todo-api/issues"
+  },
+  "homepage": "https://github.com/DaniloEspinoza96/todo-api#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "nodemon": "^2.0.15"
+  }
+}
