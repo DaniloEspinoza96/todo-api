@@ -1,0 +1,5 @@
+Siguiente paso sería
+* modificar el docker-compose para que monte también la API
+* conectar la API con la DB.
+* que el proyecto use nodemon.
+* Que todo esto suceda en npm start

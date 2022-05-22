@@ -1,5 +1,17 @@
-version: "3.3"
+version: "3"
 services:
+  todo_api:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    container_name: todo_api
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+    command: bash -c /usr/src/app/start.sh
+    env_file: .env
   mongodb:
     image: mongo
     container_name: todo_mongodb
