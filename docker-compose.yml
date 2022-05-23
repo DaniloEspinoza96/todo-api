@@ -4,6 +4,7 @@ services:
     build: .
     volumes:
       - .:/usr/src/app
+      - /usr/src/app/node_modules
     container_name: todo_api
     restart: unless-stopped
     ports:
