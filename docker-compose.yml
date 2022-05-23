@@ -1,0 +1,26 @@
+version: "3"
+services:
+  todo_api:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    container_name: todo_api
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+    command: bash -c /usr/src/app/start.sh
+    env_file: .env
+  mongodb:
+    image: mongo
+    container_name: todo_mongodb
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./db/mongodb/database:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    ports:
+      - 27017:27017
+    restart: unless-stopped
