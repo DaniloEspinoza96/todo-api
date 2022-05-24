@@ -1,7 +1,9 @@
-version: "3"
+version: "3.4"
 services:
   todo_api:
-    build: .
+    build: 
+      context: .
+      target: local
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
@@ -11,7 +13,6 @@ services:
       - 3000:3000
     depends_on:
       - mongodb
-    command: npm run dev
     env_file: .env
   mongodb:
     image: mongo
