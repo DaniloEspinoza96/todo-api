@@ -14,6 +14,8 @@ services:
     depends_on:
       - mongodb
     env_file: .env
+    links:
+      - mongodb
   mongodb:
     image: mongo
     container_name: todo_mongodb
