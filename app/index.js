@@ -10,6 +10,6 @@ app.use(bodyParser.json());
 
 const router = require('./routes');
 
-app.use('/api/todo', router);
+app.use('/api_todos', router);
 app.listen(port);
 console.log(`API escuchando en el puerto ${port}`);

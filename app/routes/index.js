@@ -11,7 +11,6 @@ router.get('/health', (req, res) => {
     });
 });
 
-// agregar todos los endpoints aqui
 router.use('/', todos);
 
 module.exports = router;

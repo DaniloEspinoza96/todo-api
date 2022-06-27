@@ -1,26 +1,29 @@
 const router = require('express').Router();
+const todosControllers = require('../controllers/todosControllers');
 
-// aquí van todas las rutas de todo
-// router.get('/:name', (req, res) => {
-//   res.json({
-//     message: `Hola ${req.params.name}`
-//   })
-// })
+// create TODO
+router.post('/', (req, res) => {
+  todosControllers.create(req, res);
+});
 
-// insertar un TODO
-router.post('/addtodo', (req, res) => {
-  // responder con el id del todo que se ha creado
-})
+// get all TODOs
+router.get('/', (req, res) => {
+  todosControllers.list(req, res);
+});
 
-// obtener todos los TODO
+// update TODO
+router.put('/:id', (req, res) => {
+  todosControllers.update(req, res);
+});
 
-// modificar un TODO
+// delete TODO
+router.delete('/:id', (req, res) => {
+  todosControllers.remove(req, res);
+});
 
-// eliminar un TODO
-
-// conseguir TODOS por fecha y orden que se pueda elegir ASC o DESC
-
-// eliminar todos los TODO
-
+// delete all TODO
+router.delete('/', (req, res) => {
+  todosControllers.removeAll(req, res);
+});
 
 module.exports = router;
