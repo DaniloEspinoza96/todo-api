@@ -1,6 +1,6 @@
-const Todos = require('../models/Todos');
+import Todos from '../models/Todos.js';
 
-module.exports = {
+const todosControllers = {
   create: (req, res) => {
     try { 
       const todo = new Todos(req.body);
@@ -144,3 +144,5 @@ module.exports = {
     }
   }
 }
+
+export default todosControllers;

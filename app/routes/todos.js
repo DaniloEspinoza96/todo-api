@@ -1,8 +1,16 @@
-const router = require('express').Router();
-const todosControllers = require('../controllers/todosControllers');
+import express from 'express';
+import todosControllers from '../controllers/todosControllers.js';
+import addTodoSchema from '../schemas/AddTodo.schema.json' assert {type: 'json'};
+import updateTodoSchema from '../schemas/UpdateTodo.schema.json' assert {type: 'json'};
+import { ValidateMiddleware } from '../middlewares/ValidateMiddleware.js';
+
+const router = express.Router();
+
+const addTodoMiddleware = new ValidateMiddleware(addTodoSchema);
+const updateTodoMiddleware = new ValidateMiddleware(updateTodoSchema);
 
 // create TODO
-router.post('/', (req, res) => {
+router.post('/', addTodoMiddleware.run, (req, res) => {
   todosControllers.create(req, res);
 });
 
@@ -12,7 +20,7 @@ router.get('/', (req, res) => {
 });
 
 // update TODO
-router.put('/:id', (req, res) => {
+router.put('/:id', updateTodoMiddleware.run, (req, res) => {
   todosControllers.update(req, res);
 });
 
@@ -26,4 +34,4 @@ router.delete('/', (req, res) => {
   todosControllers.removeAll(req, res);
 });
 
-module.exports = router;
+export default router;
