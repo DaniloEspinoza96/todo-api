@@ -1,5 +1,10 @@
 Siguiente paso sería
 * modificar el docker-compose para que monte también la API. DONE
-* conectar la API con la DB.
+* conectar la API con la DB. DONE
 * que el proyecto use nodemon. DONE
-* Que todo esto suceda en npm start.
+* Que todo esto suceda en docker-compose up. DONE
+* Añadir json validator.
+* Incorporar tests.
+* Incorporar typescript.
+* Incorporar arquitectura hexagonal.
+* Cambiar a una db sql para comprobar que se aplicó correctamente la arq hexagonal.

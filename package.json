@@ -8,6 +8,7 @@
     "start": "node ./app/index.js",
     "dev": "nodemon ./app/index.js"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DaniloEspinoza96/todo-api.git"
@@ -24,10 +25,15 @@
   },
   "homepage": "https://github.com/DaniloEspinoza96/todo-api#readme",
   "dependencies": {
+    "ajv": "^6.12.6",
     "body-parser": "^1.19.2",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "mongoose": "^6.3.4"
   },
   "devDependencies": {
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
     "eslint": "^8.13.0"
   }
 }
